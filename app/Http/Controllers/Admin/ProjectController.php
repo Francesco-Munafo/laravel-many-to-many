@@ -85,7 +85,8 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $types = Type::all();
-        return view('admin.projects.edit', compact('project', 'types'));
+        $technologies = Technology::all();
+        return view('admin.projects.edit', compact('project', 'types', 'technologies'));
     }
 
     /**
@@ -155,6 +156,8 @@ class ProjectController extends Controller
     public function forceDelete($slug)
     {
         $project = Project::withTrashed()->where('slug', '=', $slug)->first();
+
+        $project->technologies()->detach();
 
         $project->forceDelete();
 
