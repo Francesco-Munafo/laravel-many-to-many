@@ -61,7 +61,9 @@ class ProjectController extends Controller
         // $project->save();
         $val_data['slug'] =  Project::generateSlug($val_data['title'], '-');
         $project = Project::create($val_data);
+
         $project->technologies()->attach($request->technologies);
+
 
 
         return to_route('admin.projects.index')->with('message', 'Project created successfully!');

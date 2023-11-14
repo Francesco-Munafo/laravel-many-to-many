@@ -41,7 +41,7 @@
                     @foreach ($technologies as $technology)
                         <label class="list-group-item">
                             <input class="form-check-input me-1" name="technologies[]" id="technologies" type="checkbox"
-                                value="">
+                                value="{{ $technology->id }}">
                             {{ $technology->name }}
                         </label>
                     @endforeach
