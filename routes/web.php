@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\TypeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,8 +29,10 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::resource('/projects', ProjectController::class)->parameters(['projects' => 'project:slug']);
     Route::get('trash', [ProjectController::class, 'trashed'])->name('trash');
     Route::put('trash/{project}/restore', [ProjectController::class, 'restoreTrashed'])->name('restore');
-    Route::delete('trash/{project}/destroy', [ProjectController::class, 'destroy'])->name('destroy');
+    //Route::delete('trash/{project}/destroy', [ProjectController::class, 'destroy'])->name('destroy');
     Route::delete('trash/{project}/destroy', [ProjectController::class, 'forceDelete'])->name('forceDelete');
+
+    Route::resource('/types', TypeController::class)->parameters(['types' => 'type:slug']);
 });
 
 
