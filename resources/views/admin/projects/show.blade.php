@@ -46,6 +46,22 @@
                                     <small class="text-secondary">Type:</small>
                                     <span class="badge rounded-pill text-bg-primary">{{ $project->type?->name }}</span>
 
+
+                                    <div>
+                                        <small class="text-secondary">Technologies:</small>
+                                        <ul class="d-flex p-0 pt-2">
+                                            @forelse ($project->technologies as $technology)
+                                                <li class="badge bg-secondary">
+                                                    <i class="fas fa-tag fa-xs fa-fw"></i>
+                                                    {{ $technology->name }}
+                                                </li>
+                                            @empty
+                                                <li class="badge bg-secondary">No tech</li>
+                                            @endforelse
+                                        </ul>
+
+                                    </div>
+
                                 </div>
                                 <div class="col mt-5">
                                     <a class="text-white btn btn-dark" href="{{ $project->git_link }}">

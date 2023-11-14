@@ -34,6 +34,20 @@
                 <div class="text-danger">{{ $message }}</div>
             @enderror
 
+            <div class="mb-3">
+
+                <div class="list-group">
+                    <span class="mb-2">Technology</span>
+                    @foreach ($technologies as $technology)
+                        <label class="list-group-item">
+                            <input class="form-check-input me-1" name="technologies[]" id="technologies" type="checkbox"
+                                value="">
+                            {{ $technology->name }}
+                        </label>
+                    @endforeach
+
+                </div>
+            </div>
 
             <div class="mb-3">
                 <label for="type_id" class="form-label @error('type_id') is-invalid @enderror">Choose a category</label>

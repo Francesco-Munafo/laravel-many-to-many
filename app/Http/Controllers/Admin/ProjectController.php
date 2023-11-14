@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Models\Type;
 use GuzzleHttp\Promise\Create;
+use App\Models\Technology;
 
 class ProjectController extends Controller
 {
@@ -21,6 +22,7 @@ class ProjectController extends Controller
     {
         $projects = Project::paginate(5);
 
+
         return view('admin.projects.index', compact('projects'));
     }
 
@@ -30,8 +32,9 @@ class ProjectController extends Controller
     public function create()
     {
         $types = Type::all();
+        $technologies = Technology::all();
 
-        return view('admin.projects.create', compact('types'));
+        return view('admin.projects.create', compact('types', 'technologies'));
     }
 
     /**
@@ -57,7 +60,9 @@ class ProjectController extends Controller
         // $project->publication_date = $val_data['publication_date'];
         // $project->save();
         $val_data['slug'] =  Project::generateSlug($val_data['title'], '-');
-        Project::create($val_data);
+        $project = Project::create($val_data);
+        $project->technologies()->attach($request->technologies);
+
 
         return to_route('admin.projects.index')->with('message', 'Project created successfully!');
     }
