@@ -6,6 +6,7 @@
             {{ session('message') }}
         </div>
     @endif
+    <h1 class="text-muted pt-4">&#128898; Your Projects</h1>
     <div class="card my-5">
         <div class="d-flex ms-2">
 
@@ -38,7 +39,6 @@
                             <th>IMAGE</th>
                             <th>URLs</th>
                             <th>DATE</th>
-                            <th>PROJECT TYPE</th>
                             <th>ACTIONS</th>
 
                         </tr>
@@ -80,7 +80,7 @@
                                 </td>
                                 <td>{{ $project->publication_date }}</td>
 
-                                <td>{{ $project->project_type }}</td>
+
 
 
 

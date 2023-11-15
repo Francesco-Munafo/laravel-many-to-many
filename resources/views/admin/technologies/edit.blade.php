@@ -13,6 +13,8 @@
             </div>
         @endif
 
+        <h1 class="text-muted pb-4">&#128898; Edit Technology</h1>
+
         <form action="{{ route('admin.technologies.update', $technology) }}" method="POST">
             @csrf
 

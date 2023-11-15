@@ -13,6 +13,8 @@
             </div>
         @endif
 
+        <h1 class="text-muted pt-4">&#128898; Edit Type</h1>
+
         <form action="{{ route('admin.types.update', $type) }}" method="POST">
             @csrf
 

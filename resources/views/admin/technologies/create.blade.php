@@ -12,6 +12,7 @@
                 </ul>
             </div>
         @endif
+        <h1 class="text-muted pb-4">&#128898; Create new Technology</h1>
 
         <form action="{{ route('admin.technologies.store') }}" method="POST" enctype="multipart/form-data">
             @csrf

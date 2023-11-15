@@ -6,6 +6,7 @@
             {{ session('message') }}
         </div>
     @endif
+    <h1 class="text-muted pt-4">&#128898; Your Technologies</h1>
     <div class="card my-5">
         <div class="d-flex ms-2">
 
@@ -15,7 +16,7 @@
                     <path
                         d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                 </svg>
-                Add a new type</a>
+                Add a new technology</a>
         </div>
         <div class="card-body p-0">
 
@@ -26,7 +27,7 @@
                         <tr>
                             <th>ID</th>
                             <th>NAME</th>
-                            <th>DATE</th>
+                            <th>CREATED AT</th>
                             <th>ACTIONS</th>
 
                         </tr>

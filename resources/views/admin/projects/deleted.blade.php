@@ -6,6 +6,7 @@
             {{ session('message') }}
         </div>
     @endif
+    <h1 class="text-muted pt-4">&#128898; Trashed Projects 🗑</h1>
     <div class="card my-5">
 
         <div class="card-body p-0">

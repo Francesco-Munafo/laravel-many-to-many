@@ -6,6 +6,7 @@
             {{ session('message') }}
         </div>
     @endif
+    <h1 class="text-muted pt-4">&#128898; Your Types</h1>
     <div class="card my-5">
         <div class="d-flex ms-2">
 
@@ -26,7 +27,7 @@
                         <tr>
                             <th>ID</th>
                             <th>NAME</th>
-                            <th>DATE</th>
+                            <th>CREATED AT</th>
                             <th>ACTIONS</th>
 
                         </tr>

@@ -13,6 +13,8 @@
             </div>
         @endif
 
+        <h1 class="text-muted pb-4">&#128898; Create new type</h1>
+
         <form action="{{ route('admin.types.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 

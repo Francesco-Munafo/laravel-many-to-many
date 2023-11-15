@@ -13,6 +13,8 @@
             </div>
         @endif
 
+        <h1 class="text-muted py-4">&#128898; Create new Project</h1>
+
         <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
