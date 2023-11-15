@@ -13,17 +13,18 @@
             </div>
         @endif
 
-        <form action="{{ route('admin.types.update', $type) }}" method="POST">
+        <form action="{{ route('admin.technologies.update', $technology) }}" method="POST">
             @csrf
 
             @method('PUT')
 
-            <h1>Editing "{{ $type->name }}"</h1>
+            <h1>Editing "{{ $technology->name }}"</h1>
 
             <div class="mb-3">
-                <label for="name" class="form-label">Type name</label>
+                <label for="name" class="form-label">Technology name</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name"
-                    aria-describedby="helpName" placeholder="Insert a type name" value="{{ old('name', $type->name) }}">
+                    aria-describedby="helpName" placeholder="Insert a technology name"
+                    value="{{ old('name', $technology->name) }}">
             </div>
             @error('name')
                 <div class="text-danger">{{ $message }}</div>

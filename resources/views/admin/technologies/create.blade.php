@@ -13,13 +13,13 @@
             </div>
         @endif
 
-        <form action="{{ route('admin.types.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.technologies.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-3">
-                <label for="name" class="form-label">Type name</label>
+                <label for="name" class="form-label">Technology name</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name"
-                    aria-describedby="helpName" placeholder="Insert a type name" value="{{ old('name') }}">
+                    aria-describedby="helpName" placeholder="Insert a technology name" value="{{ old('name') }}">
             </div>
             @error('name')
                 <div class="text-danger">{{ $message }}</div>

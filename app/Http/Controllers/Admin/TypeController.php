@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+
 use App\Models\Type;
 use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\UpdateTypeRequest;
@@ -63,6 +64,8 @@ class TypeController extends Controller
     public function update(UpdateTypeRequest $request, Type $type)
     {
         $val_data = $request->validated();
+
+
 
         if (!Str::is($type->getOriginal('name'), $request->name)) {
             $val_data['slug'] = $type->generateSlug($request->name);

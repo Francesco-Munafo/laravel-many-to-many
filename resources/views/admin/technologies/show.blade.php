@@ -8,7 +8,7 @@
     @endif
     <div class="col mt-3">
 
-        <a class="btn btn-primary" href="{{ route('admin.types.index', $type) }}">
+        <a class="btn btn-primary" href="{{ route('admin.technologies.index', $technology) }}">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left"
                 viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
@@ -25,18 +25,19 @@
 
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h3>Type #{{ $type->id }}</h3>
+                                <h3>Technology #{{ $technology->id }}</h3>
                                 <small class="text-secondary">Title:</small>
-                                <h4>{{ $type->name }}</h4>
+                                <h4>{{ $technology->name }}</h4>
                                 <small class="text-secondary">Description:</small>
 
                                 <small class="text-secondary">Created at:</small>
-                                <h6>{{ $type->created_at }}</h6>
+                                <h6>{{ $technology->created_at }}</h6>
 
                                 <div>
 
 
-                                    <a class="btn btn-warning" href="{{ route('admin.types.edit', $type->slug) }}">
+                                    <a class="btn btn-warning"
+                                        href="{{ route('admin.technologies.edit', $technology->slug) }}">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                             <path
@@ -44,7 +45,7 @@
                                         </svg>
                                     </a>
                                     <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                        data-bs-target="#modalId-{{ $type->id }}">
+                                        data-bs-target="#modalId-{{ $technology->id }}">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
                                             <path
@@ -54,17 +55,17 @@
 
                                     <!-- Modal Body -->
                                     <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-                                    <div class="modal fade" id="modalId-{{ $type->id }}" tabindex="-1"
+                                    <div class="modal fade" id="modalId-{{ $technology->id }}" tabindex="-1"
                                         data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
-                                        aria-labelledby="modalNameId-{{ $type->id }}" aria-hidden="true">
+                                        aria-labelledby="modalNameId-{{ $technology->id }}" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
                                             role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title text-decoration-underline"
-                                                        id="modalTitleId-{{ $type->id }}">
+                                                        id="modalTitleId-{{ $technology->id }}">
                                                         Deleting your
-                                                        type "{{ $type->title }}"
+                                                        technology "{{ $technology->title }}"
                                                     </h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
@@ -72,13 +73,14 @@
                                                 <div class="modal-body">
                                                     Warning! This is an irreversible operation! Doing this you'll delete
                                                     your
-                                                    type.
+                                                    technology.
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
                                                         data-bs-dismiss="modal">Dismiss</button>
 
-                                                    <form action="{{ route('admin.types.destroy', $type->slug) }}"
+                                                    <form
+                                                        action="{{ route('admin.technologies.destroy', $technology->slug) }}"
                                                         method="POST">
                                                         @csrf
                                                         @method('DELETE')
