@@ -19,8 +19,9 @@
 
             <div class="mb-3">
                 <label for="name" class="form-label">Technology name</label>
-                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name"
-                    aria-describedby="helpName" placeholder="Insert a technology name" value="{{ old('name') }}">
+                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
+                    id="{{ $technology->id }}" aria-describedby="helpName" placeholder="Insert a technology name"
+                    value="{{ old('name') }}">
             </div>
             @error('name')
                 <div class="text-danger">{{ $message }}</div>

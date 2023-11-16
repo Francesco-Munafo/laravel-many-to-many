@@ -115,9 +115,9 @@ class ProjectController extends Controller
 
 
 
-        $project->technologies()->detach();
 
-        $project->technologies()->attach($request->technologies);
+
+        $project->technologies()->sync($request->technologies);
         $project->update($val_data);
 
         return to_route('admin.projects.show', $project)->with('message', 'Project updated successfully!');
